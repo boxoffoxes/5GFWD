@@ -32,6 +32,6 @@ public class GrabImage : NetworkBehaviour {
         Debug.Log("I'm so happy");
         Texture2D t = new Texture2D(256,256);
         t.LoadImage(png);
-        plane.transform.GetComponent<Material>().SetTexture("_MainTex", t);
+        plane.transform.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", t);
     }
 }
