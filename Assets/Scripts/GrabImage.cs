@@ -17,8 +17,8 @@ public class GrabImage : NetworkBehaviour {
         RenderTexture.active = tx;
         Texture2D t2 = new Texture2D(tx.width, tx.height);
         t2.ReadPixels(new Rect(0, 0, tx.width, tx.height), 0, 0);
-        byte[] png = t2.EncodeToPNG();
-        System.IO.File.WriteAllBytes("blah.png", png);
+        byte[] png = t2.EncodeToJPG();
+        System.IO.File.WriteAllBytes("blah.jpg", png);
         if (isServer) {
             RpcDebugMessages(png);
         } else {
