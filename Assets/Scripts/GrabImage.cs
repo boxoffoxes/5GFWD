@@ -18,6 +18,6 @@ public class GrabImage : MonoBehaviour {
         RenderTexture.active = null;
         byte[] png = t2.EncodeToPNG();
         System.IO.File.WriteAllBytes("blah.png", png);
-        RpcDebugMessages();
-	}
+// RpcDebugMessages();
+    }
 }
