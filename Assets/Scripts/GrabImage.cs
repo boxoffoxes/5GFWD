@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
-public class GrabImage : MonoBehaviour {
+public class GrabImage : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +19,10 @@ public class GrabImage : MonoBehaviour {
         RenderTexture.active = null;
         byte[] png = t2.EncodeToPNG();
         System.IO.File.WriteAllBytes("blah.png", png);
-    rpcDebugMessages();
+    	RpcDebugMessages();
     }
     [ClientRpc]
-    void rpcDebugMessages()
+    void RpcDebugMessages()
     {
         Debug.Log("I'm so happy");
     }
