@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GrabImage : NetworkBehaviour {
     public GameObject plane;
-    float sampleTime = 20;
+    float sampleTime = 15;
     float nextFrameTime = 0;
     private Texture2D t;
     private Texture2D t2;
@@ -38,7 +38,7 @@ public class GrabImage : NetworkBehaviour {
     [ClientRpc]
     void RpcDebugMessages(byte[] png)
     {
-        Debug.Log("I'm so happy");
+        //Debug.Log("I'm so happy");
         //Texture2D t = new Texture2D(256,256);
         t.LoadImage(png);
         plane.transform.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", t);
