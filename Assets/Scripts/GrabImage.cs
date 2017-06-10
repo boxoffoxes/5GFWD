@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
 public class GrabImage : MonoBehaviour {
@@ -18,6 +19,11 @@ public class GrabImage : MonoBehaviour {
         RenderTexture.active = null;
         byte[] png = t2.EncodeToPNG();
         System.IO.File.WriteAllBytes("blah.png", png);
-// RpcDebugMessages();
+    rpcDebugMessages();
+    }
+    [ClientRpc]
+    void rpcDebugMessages()
+    {
+        Debug.Log("I'm so happy");
     }
 }
